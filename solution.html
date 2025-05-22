@@ -15,6 +15,14 @@
       avatar-recorder
       avatar-replayer="src: https://cdn.glitch.com/d01b0eb7-9be3-4d2e-aaac-8ff0c728d7ba%2Fplayer-recording-A-Frame%20Motion%20Capture%20Development-1490397430529.json?1490401010899; loop: true; spectatorMode: false"
     >
+      <a-assets timeout="10000">
+        <a-mixin
+          id="cube"
+          geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30"
+          material="color: #EF2D5E;"
+        ></a-mixin>
+      </a-assets>
+
       <!-- カメラ -->
       <a-entity camera position="0 1.6 0"></a-entity>
 
@@ -37,27 +45,11 @@
       </a-entity>
 
       <!-- A-Frame cubes. -->
-      <a-box
-        position="0.5 1.5 -1"
-        color="#EF2D5E"
-        depth="0.3"
-        height="0.3"
-        width="0.3"
-      ></a-box>
-      <a-box
-        position="0 1.5 -1"
-        color="#EF2D5E"
-        depth="0.3"
-        height="0.3"
-        width="0.3"
-      ></a-box>
-      <a-box
-        position="-0.5 1.5 -1"
-        color="#EF2D5E"
-        depth="0.3"
-        height="0.3"
-        width="0.3"
-      ></a-box>
+      <a-entity id="cubes" position="0 0 -1.0">
+        <a-entity mixin="cube" position="0.5 1.5 0"></a-entity>
+        <a-entity mixin="cube" position="0 1.5 0"></a-entity>
+        <a-entity mixin="cube" position="-0.5 1.5 0"></a-entity>
+      </a-entity>
 
       <!-- Environment. -->
       <a-entity
