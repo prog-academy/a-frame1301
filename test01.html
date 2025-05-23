@@ -21,7 +21,7 @@
           el.addEventListener("raycaster-intersected", () => {
             el.setAttribute("material", "color", "#4CC3D9");
 
-            // テキストがなければ作成して追加
+            // テキストがなければ作成して追加  表示文字列は　label.setAttribute("value", "") の””の中にセット;
             if (!label) {
               label = document.createElement("a-text");
               label.setAttribute("value", "");
